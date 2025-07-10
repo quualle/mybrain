@@ -9,7 +9,7 @@ from typing import Optional, List, Dict
 from datetime import datetime, timedelta
 import os
 
-from ..core.retrieval import HybridRetriever
+from core.retrieval import HybridRetriever
 
 
 router = APIRouter()

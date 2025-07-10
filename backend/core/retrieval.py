@@ -8,7 +8,7 @@ import numpy as np
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime, timedelta
 import asyncpg
-from .embeddings import embedding_service
+from core.embeddings import embedding_service
 
 
 class HybridRetriever:

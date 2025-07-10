@@ -16,11 +16,11 @@ import asyncpg
 from openai import AsyncOpenAI
 from anthropic import AsyncAnthropic
 
-from ..core.retrieval import HybridRetriever
-from ..core.smart_routing import SmartQueryRouter
-from ..core.conversation_memory import ConversationMemory
-from ..core.fuzzy_search import FuzzySearchEngine
-from ..core.cross_context_reasoning import CrossContextReasoner
+from core.retrieval import HybridRetriever
+from core.smart_routing import SmartQueryRouter
+from core.conversation_memory import ConversationMemory
+from core.fuzzy_search import FuzzySearchEngine
+from core.cross_context_reasoning import CrossContextReasoner
 from dotenv import load_dotenv
 
 # Load environment variables

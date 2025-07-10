@@ -13,10 +13,10 @@ import json
 import asyncio
 
 # Import services
-from ..services.youtube import YouTubeService
-from ..services.whisper import WhisperService
-from ..core.chunking import smart_chunker
-from ..core.embeddings import embedding_service
+from services.youtube import YouTubeService
+from services.whisper import WhisperService
+from core.chunking import smart_chunker
+from core.embeddings import embedding_service
 
 
 router = APIRouter()
