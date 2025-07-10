@@ -10,7 +10,7 @@ import os
 from dotenv import load_dotenv
 
 # Import routers (to be created)
-from .api import ingest, search, chat
+from api import ingest, search, chat
 
 # Load environment variables
 load_dotenv()
