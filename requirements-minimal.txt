@@ -1,0 +1,31 @@
+# Core dependencies only - for Python 3.13 compatibility
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+
+# Database
+asyncpg
+sqlalchemy
+
+# AI/ML - minimal versions
+openai
+anthropic
+
+# YouTube and media processing  
+yt-dlp
+youtube-transcript-api
+
+# Text processing
+tiktoken
+beautifulsoup4
+
+# Caching and async
+redis
+aiohttp
+
+# Utils
+pydantic
+httpx
+python-jose[cryptography]
