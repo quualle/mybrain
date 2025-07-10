@@ -77,7 +77,7 @@ function extractTopics(results: any[]): string[] {
     const content = result.content.toLowerCase()
     const tokens = content.split(/\s+/)
     
-    tokens.forEach(token => {
+    tokens.forEach((token: string) => {
       const cleaned = token.replace(/[.,!?;:]/g, '')
       if (cleaned.length > 4 && !stopWords.has(cleaned)) {
         words[cleaned] = (words[cleaned] || 0) + 1
