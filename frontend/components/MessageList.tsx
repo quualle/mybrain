@@ -74,7 +74,7 @@ export default function MessageList({ messages, isLoading }: MessageListProps) {
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    code({ node, inline, className, children, ...props }) {
+                    code({ node, inline, className, children, ...props }: any) {
                       const match = /language-(\w+)/.exec(className || '')
                       return !inline && match ? (
                         <SyntaxHighlighter
@@ -92,7 +92,7 @@ export default function MessageList({ messages, isLoading }: MessageListProps) {
                         </code>
                       )
                     },
-                    table({ children }) {
+                    table({ children }: any) {
                       return (
                         <div className="overflow-x-auto my-4">
                           <table className="min-w-full">{children}</table>
