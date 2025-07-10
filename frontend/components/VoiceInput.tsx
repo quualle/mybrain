@@ -30,7 +30,7 @@ export default function VoiceInput({ onTranscript, onStop }: VoiceInputProps) {
       setIsListening(true)
     }
 
-    recognition.onresult = (event) => {
+    recognition.onresult = (event: any) => {
       let interimTranscript = ''
       let finalTranscript = ''
 
@@ -46,7 +46,7 @@ export default function VoiceInput({ onTranscript, onStop }: VoiceInputProps) {
       setTranscript(finalTranscript + interimTranscript)
     }
 
-    recognition.onerror = (event) => {
+    recognition.onerror = (event: any) => {
       console.error('Speech recognition error:', event.error)
       setIsListening(false)
       onStop()
