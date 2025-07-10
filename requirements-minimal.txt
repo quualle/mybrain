@@ -12,6 +12,7 @@ sqlalchemy
 # AI/ML - minimal versions
 openai
 anthropic
+numpy
 
 # YouTube and media processing  
 yt-dlp
