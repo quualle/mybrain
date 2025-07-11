@@ -11,9 +11,9 @@ from dotenv import load_dotenv
 
 # Import routers
 try:
-    from api import ingest_minimal as ingest, search, chat
+    from api import ingest_minimal as ingest, search, chat, documents
 except ImportError:
-    from api import ingest, search, chat
+    from api import ingest, search, chat, documents
 
 # Load environment variables
 load_dotenv()
@@ -57,6 +57,7 @@ app.add_middleware(
 app.include_router(ingest.router, prefix="/api/v1/ingest", tags=["ingestion"])
 app.include_router(search.router, prefix="/api/v1/search", tags=["search"])
 app.include_router(chat.router, prefix="/api/v1/chat", tags=["chat"])
+app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
 
 
 @app.get("/")
