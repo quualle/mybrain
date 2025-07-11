@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Send } from 'lucide-react'
+import { Send, MessageSquarePlus } from 'lucide-react'
 import MessageList from './MessageList'
 import { useChat } from '@/frontend/lib/hooks/useChat'
 
 export default function ChatInterface() {
   const [input, setInput] = useState('')
   const inputRef = useRef<HTMLTextAreaElement>(null)
-  const { messages, isLoading, sendMessage } = useChat()
+  const { messages, isLoading, sendMessage, clearMessages } = useChat()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,6 +32,19 @@ export default function ChatInterface() {
 
   return (
     <div className="h-full flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+      {/* Header with New Chat Button */}
+      {messages.length > 0 && (
+        <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex justify-end">
+          <button
+            onClick={clearMessages}
+            className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            <MessageSquarePlus className="w-4 h-4" />
+            <span>Neuen Chat beginnen</span>
+          </button>
+        </div>
+      )}
+      
       {/* Messages */}
       <div className="flex-1 overflow-hidden">
         <MessageList messages={messages} isLoading={isLoading} />
