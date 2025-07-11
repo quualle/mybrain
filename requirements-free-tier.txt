@@ -1,0 +1,34 @@
+# Minimal dependencies für Render Free Tier
+# Nur API-basierte Services, keine lokalen ML-Modelle
+
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+
+# Database
+asyncpg
+sqlalchemy
+
+# AI/ML - NUR API Services (kein torch/transformers!)
+openai
+anthropic
+numpy
+
+# YouTube and media processing  
+yt-dlp
+youtube-transcript-api
+
+# Text processing
+tiktoken
+beautifulsoup4
+
+# Caching and async
+redis
+aiohttp
+
+# Utils
+pydantic
+httpx
+python-jose[cryptography]
