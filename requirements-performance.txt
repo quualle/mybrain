@@ -1,0 +1,36 @@
+# Performance-optimierte Dependencies für Render Free Tier
+# Fokus: Beste Retrieval-Performance ohne unnötige Features
+
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+
+# Database - ESSENTIELL für Performance
+asyncpg
+sqlalchemy
+
+# AI/ML - NUR API-basierte Services
+openai           # Embeddings + GPT
+anthropic        # Claude für beste Antworten
+numpy           # Vektor-Operationen
+
+# Text processing - KRITISCH für Chunking
+tiktoken        # Token counting für optimale Chunks
+
+# Caching - WICHTIG für Performance
+redis
+aiohttp
+
+# Core Utils
+pydantic
+httpx
+python-jose[cryptography]
+
+# NICHT enthalten:
+# - torch/transformers (3GB gespart)
+# - yt-dlp, youtube-transcript-api
+# - beautifulsoup4
+# - sentence-transformers
+# - whisper/audio processing

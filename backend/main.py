@@ -9,8 +9,11 @@ from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
 
-# Import routers (to be created)
-from api import ingest, search, chat
+# Import routers
+try:
+    from api import ingest_minimal as ingest, search, chat
+except ImportError:
+    from api import ingest, search, chat
 
 # Load environment variables
 load_dotenv()
