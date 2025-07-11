@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Send, MessageSquarePlus } from 'lucide-react'
+import { Send, MessageSquarePlus, FileText } from 'lucide-react'
 import MessageList from './MessageList'
 import { useChat } from '@/frontend/lib/hooks/useChat'
+import Link from 'next/link'
 
 export default function ChatInterface() {
   const [input, setInput] = useState('')
@@ -32,9 +33,17 @@ export default function ChatInterface() {
 
   return (
     <div className="h-full flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-      {/* Header with New Chat Button */}
-      {messages.length > 0 && (
-        <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex justify-end">
+      {/* Header with Action Buttons */}
+      <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex justify-between">
+        <Link
+          href="/documents"
+          className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        >
+          <FileText className="w-4 h-4" />
+          <span>Dokumente verwalten</span>
+        </Link>
+        
+        {messages.length > 0 && (
           <button
             onClick={clearMessages}
             className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
@@ -42,8 +51,8 @@ export default function ChatInterface() {
             <MessageSquarePlus className="w-4 h-4" />
             <span>Neuen Chat beginnen</span>
           </button>
-        </div>
-      )}
+        )}
+      </div>
       
       {/* Messages */}
       <div className="flex-1 overflow-hidden">
