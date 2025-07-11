@@ -72,6 +72,7 @@ export default function MessageList({ messages, isLoading }: MessageListProps) {
                 </div>
               ) : (
                 <ReactMarkdown
+                  className="prose prose-sm dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-xl prose-h2:text-lg prose-h3:text-base prose-h4:text-base prose-strong:font-semibold"
                   remarkPlugins={[remarkGfm]}
                   components={{
                     code({ node, inline, className, children, ...props }: any) {
